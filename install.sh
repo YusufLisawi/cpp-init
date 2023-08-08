@@ -1,15 +1,14 @@
-#!/bin/bash
+#!/bin/zsh
 
-# Get the current directory
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+/bin/rm -rf ~/.cpp-init > /dev/null 2>&1
 
-# Copy the script to /usr/local/bin
-sudo cp "$DIR/cpp-init" /usr/local/bin
+curl -fsSL https://raw.githubusercontent.com/YusufLisawi/cpp-init/main/cpp-init > ~/.cpp-init
 
-# Add /usr/local/bin to the system path
-echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
+chmod +x ~/.cpp-init
 
-# Source the shell
-source ~/.bash_profile
+echo "export PATH=~/.cpp-init" >> ~/.zshrc
 
-echo "Script installed successfully!"
+echo "source ~/.cpp-init" >> ~/.zshrc
+
+
+echo "cpp-init\e[1;32m v$WIZZARD_VERSION\e[0m installed"
