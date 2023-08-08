@@ -4,7 +4,7 @@ This script generates two files, <classname>.cpp and <classname>.hpp, with the c
 ## Installation
 To install the script, run the following command in your terminal:
 ``` sh
-curl -fsSL https://raw.githubusercontent.com/YusufLisawi/cpp-init/main/cpp-init | zsh && source ~/.zshrc 
+curl -fsSL https://raw.githubusercontent.com/YusufLisawi/cpp-init/main/install.sh | zsh && source ~/.zshrc 
 ```
 
 ## Usage
