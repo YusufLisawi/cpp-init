@@ -54,6 +54,7 @@ $class_name::~$class_name() {
 
 $class_name::$class_name(const $class_name& other) {
     std::cout << "Copy constructor called for $class_name"<< std::endl;
+    *this = other;
 }
 
 $class_name& $class_name::operator=(const $class_name& other) {
