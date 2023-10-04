@@ -19,8 +19,7 @@ header_file="$directory/$class_name.hpp"
 echo "Generating $header_file..."
 upper_class_name=$(echo $class_name | tr '[:lower:]' '[:upper:]')
 cat > $header_file << EOF
-#ifndef ${upper_class_name}_HPP
-#define ${upper_class_name}_HPP
+#pragma once
 
 #include <iostream>
 
@@ -33,7 +32,6 @@ public:
     $class_name& operator=(const $class_name& other);
 };
 
-#endif
 EOF
 
 # Generate source file
@@ -45,20 +43,20 @@ cat > $source_file << EOF
 #include "$class_name.hpp"
 
 $class_name::$class_name() {
-    std::cout << "Constructor called for $class_name"<< std::endl;
+    // std::cout << "Constructor called for $class_name"<< std::endl;
 }
 
 $class_name::~$class_name() {
-    std::cout << "Destructor called for $class_name"<< std::endl;
+    // std::cout << "Destructor called for $class_name"<< std::endl;
 }
 
 $class_name::$class_name(const $class_name& other) {
-    std::cout << "Copy constructor called for $class_name"<< std::endl;
+    // std::cout << "Copy constructor called for $class_name"<< std::endl;
     *this = other;
 }
 
 $class_name& $class_name::operator=(const $class_name& other) {
-    std::cout << "Assignment operator called for $class_name" << std::endl;
+    // std::cout << "Assignment operator called for $class_name" << std::endl;
     if (this != &other) {
         // Copy data here
     }
